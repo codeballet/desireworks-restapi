@@ -4,9 +4,11 @@ import { config } from './config/config';
 // Get configuration details
 const c = config.dev;
 
-// Configure AWS
-const credentials = new AWS.SharedIniFileCredentials({profile: c.aws_profile});
-AWS.config.credentials = credentials;
+// Configure AWS for local and deployed environments
+if (c.aws_profile !== 'DEPLOYED') {
+    const credentials = new AWS.SharedIniFileCredentials({profile: c.aws_profile});
+    AWS.config.credentials = credentials;
+}
 
 // Construct S3 service object
 const s3 = new AWS.S3({
