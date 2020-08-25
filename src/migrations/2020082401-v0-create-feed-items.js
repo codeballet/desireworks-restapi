@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize');
 
 async function up(queryInterface) {
 	try {
-		await queryInterface.createTable('FeedItem', {
+		await queryInterface.createTable('FeedItems', {
 			id: {
 				type: Sequelize.INTEGER,
 				autoIncrement: true,
@@ -29,11 +29,10 @@ async function up(queryInterface) {
 	} catch (e) {
 		console.log(e);
 	}
-	a
 }
 
 async function down(queryInterface) {
-	await queryInterface.dropTable('FeedItem');
+	await queryInterface.dropTable('FeedItems');
 }
 
 module.exports = { up, down };

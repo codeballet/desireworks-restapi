@@ -1,13 +1,13 @@
 export const config = {
     "dev": {
-      "username": "",
-      "password": "",
-      "database": "",
-      "host": "",
+      "username": process.env.DESIREWORKS_DEV_POSTGRES_USERNAME,
+      "password": process.env.DESIREWORKS_DEV_POSTGRES_PASSWORD,
+      "database": process.env.DESIREWORKS_DEV_POSTGRES_DATABASE,
+      "host": process.env.DESIREWORKS_DEV_POSTGRES_HOST,
       "dialect": "postgres",
-      "aws_region": "",
-      "aws_profile": "default",
-      "aws_media_bucket": ""
+      "aws_region": process.env.DESIREWORKS_DEV_AWS_REGION,
+      "aws_profile": process.env.DESIREWORKS_DEV_AWS_PROFILE,
+      "aws_images_bucket": process.env.DESIREWORKS_DEV_AWS_MEDIA_BUCKET
     },
     "prod": {
       "username": "",
