@@ -27,7 +27,7 @@ async function up(queryInterface) {
 			}
 		});
 	} catch (e) {
-		console.log(e);
+        console.log(`Migration error: ${e}`)
 	}
 }
 

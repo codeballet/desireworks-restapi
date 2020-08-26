@@ -1,6 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { FeedItem } from '../models/FeedItem';
 import {getGetSignedUrl, getPutSignedUrl } from '../../../../aws';
+import { requireAuth } from '../../users/routes/auth.router';
 
 const router: Router = Router();
 
@@ -24,6 +25,7 @@ router.get('/', async (req: Request, res: Response) => {
 
 // GET a specific resource by Primary Key
 router.get('/:id',
+    requireAuth,
     async(req: Request, res: Response) => {
         // Parse and check for an integer id parameter
         const { id } = req.params;

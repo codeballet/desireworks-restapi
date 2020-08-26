@@ -7,7 +7,8 @@ export const config = {
       "dialect": "postgres",
       "aws_region": process.env.DESIREWORKS_DEV_AWS_REGION,
       "aws_profile": process.env.DESIREWORKS_DEV_AWS_PROFILE,
-      "aws_images_bucket": process.env.DESIREWORKS_DEV_AWS_MEDIA_BUCKET
+      "aws_images_bucket": process.env.DESIREWORKS_DEV_AWS_MEDIA_BUCKET,
+      "jwt_secret": process.env.DESIREWORKS_DEV_JWT_SECRET
     },
     "prod": {
       "username": "",
